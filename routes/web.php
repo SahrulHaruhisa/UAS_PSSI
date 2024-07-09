@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\MacthTiketController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\HasilPertandinganController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,4 +38,17 @@ Route::middleware('auth','adminMiddleware')->group(function () {
     Route::post('/admin/updateslide/{id}', [SliderController::class, 'update'])->name('admin.editdata');
     Route::get('/admin/delete/{id}', [SliderController::class, 'destroy']);
     Route::delete('/admin/selected',[SliderController::class, 'deleteAll'])->name('admin.delete');
+
+    // hasilmacthroute
+    Route::get('/admin/hasil_macth', [HasilPertandinganController::class, 'index'])->name('admin.hasil_macth');
+    Route::get('/admin/tambahhasil_macth', [HasilPertandinganController::class, 'create'])->name('admin.tambahhasil_macth');
+    Route::post('/admin/inserthasil_macth', [HasilPertandinganController::class, 'store']);
+    Route::get('/admin/edithasilmacth/{id}', [HasilPertandinganController::class, 'edit'])->name('admin.edithasilmacth');
+    Route::post('/admin/updatehasilmacth/{id}', [HasilPertandinganController::class, 'update'])->name('admin.edithasilmacth');
+    Route::get('/admin/deletehasilmacth/{id}', [HasilPertandinganController::class, 'destroy']);
+
+      // ticketmacthroute
+      Route::get('/admin/macth_ticket', [MacthTiketController::class, 'index'])->name('admin.macth_ticket');
+      Route::get('/admin/tambahmacth_ticket', [MacthTiketController::class, 'create'])->name('admin.tambahmacth_ticket');
+      Route::post('/admin/insertmacth_ticket', [MacthTiketController::class, 'store']);
 });
