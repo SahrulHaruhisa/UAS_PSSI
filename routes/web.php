@@ -51,4 +51,8 @@ Route::middleware('auth','adminMiddleware')->group(function () {
       Route::get('/admin/macth_ticket', [MacthTiketController::class, 'index'])->name('admin.macth_ticket');
       Route::get('/admin/tambahmacth_ticket', [MacthTiketController::class, 'create'])->name('admin.tambahmacth_ticket');
       Route::post('/admin/insertmacth_ticket', [MacthTiketController::class, 'store']);
+      Route::get('/admin/editmacth_ticket/{id}', [MacthTiketController::class, 'edit'])->name('admin.editmacth_ticket');
+      Route::post('/admin/updatemacth_ticket/{id}', [MacthTiketController::class, 'update'])->name('admin.editmacth_ticket');
+      Route::get('/admin/deletemacth_tiket/{id}', [MacthTiketController::class, 'destroy']);
+      Route::delete('/admin/selected',[MacthTiketController::class, 'deleteAll'])->name('admin.delete');
 });

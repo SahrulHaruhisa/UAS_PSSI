@@ -54,7 +54,7 @@
                             <td>{{$ticket ->location}}</td>
                             <td>{{$ticket ->tanggal_macth}}</td>
                             <td>{{$ticket ->hari}}</td>
-                            <td><a href="/admin/edithasilmacth/{{$ticket->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                            <td><a href="/admin/editmacth_ticket/{{$ticket->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
                                 <a href="" class="Show"><i class="fa-solid fa-eye"></i>Show</a>
                                 <a href="#" class="Delete" data-id="{{$ticket->id}}"><i class="fa-regular fa-trash-can"></i>Delete</a></td>
                             <td>{{$ticket-> created_at->format('D M Y')}}</td>
@@ -87,7 +87,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location ="/admin/deletehasilmacth/"+sliderid+""
+                        window.location ="/admin/deletemacth_tiket/"+sliderid+""
                       swal("Poof! Your imaginary file has been deleted!", {
                        icon: "success",
                  });

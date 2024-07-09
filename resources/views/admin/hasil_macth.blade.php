@@ -62,7 +62,7 @@
                             {{$hasil ->pencetakgol4}}
                             {{$hasil ->pencetakgol5}}
                             </td>
-                            <td><a href="/admin/edithasilmacth/{{$hasil->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                            <td><a href="/admin/edithasil_macth/{{$hasil->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
                                 <a href="" class="Show"><i class="fa-solid fa-eye"></i>Show</a>
                                 <a href="#" class="Delete" data-id="{{$hasil->id}}"><i class="fa-regular fa-trash-can"></i>Delete</a></td>
                             <td>{{$hasil-> created_at->format('D M Y')}}</td>
