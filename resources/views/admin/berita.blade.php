@@ -15,7 +15,7 @@
                     <p>Let's grow to your business!Create your player and upload here</p>
                   </div>
                   
-                <form action="/admin/player" method="GET">
+                <form action="/admin/berita" method="GET">
                  <input type="search" name="search"  class="form-control" id="inputPassword4" placeholder="Search heree bro">
                 </form>
                 <div class="flex gap-9">
@@ -95,7 +95,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location ="/admin/deleteplayer/"+sliderid+""
+                        window.location ="/admin/deleteberita/"+sliderid+""
                       swal("Poof! Your imaginary file has been deleted!", {
                        icon: "success",
                  });

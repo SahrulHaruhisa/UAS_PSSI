@@ -4,15 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = berita::all();
+        if($request->has('search')){
+            $data = berita::where('title','LIKE','%' .$request->search. '%')->paginate(4);
+        }
+        else{
+            $data = berita::paginate(4);
+        }
         return view('admin.berita',compact('data'));
     }
 
@@ -91,9 +97,10 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(berita $berita)
+    public function edit(berita $berita,$id)
     {
-        //
+        $data = berita::find($id);
+        return view('admin.editplayer',compact('data'));
     }
 
     /**
@@ -107,8 +114,30 @@ class BeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(berita $berita)
+    public function destroy(berita $berita,$id)
     {
-        //
+        $data = berita::find($id);
+        if(File::exists($data->foto_1)){
+            File::delete($data->foto_1);
+        }
+        if(File::exists($data->foto_2)){
+            File::delete($data->foto_2);
+        }
+        if(File::exists($data->foto_3)){
+            File::delete($data->foto_3);
+        }
+        if(File::exists($data->img_bg)){
+            File::delete($data->img_bg);
+        }
+        $data->delete();
+        return redirect()->route('admin.berita')->with('success','data berhasil di hapus');
+    }
+    public function deleteAll(Request $request)
+    {
+
+        $ids = $request->ids;
+        berita::whereIn('id',$ids)->delete();
+
+        return response()->json(["success"=>"data berhasil di hapus"]);
     }
 }

@@ -64,11 +64,15 @@ Route::middleware('auth','adminMiddleware')->group(function () {
       Route::post('/admin/insertplayer', [PlayerController::class, 'store']);
       Route::get('/admin/editplayer/{id}', [PlayerController::class, 'edit'])->name('admin.editplayer');
       Route::post('/admin/updateplayer/{id}', [PlayerController::class, 'update'])->name('admin.editplayer');
-      Route::get('/admin/deletplayer/{id}', [MacthTiketController::class, 'destroy']);
+      Route::get('/admin/deleteplayer/{id}', [MacthTiketController::class, 'destroy']);
       Route::delete('/admin/selected',[MacthTiketController::class, 'deleteAll'])->name('admin.delete');
 
       // beritaroute
       Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita');
       Route::get(' /admin/tambahberita', [BeritaController::class, 'create'])->name('admin.tambahberita');
       Route::post('/admin/insertberita', [BeritaController::class, 'store']);
+      Route::get('/admin/editberita/{id}', [BeritaController::class, 'edit'])->name('admin.editberita');
+      Route::post('/admin/updateberita/{id}', [BeritaController::class, 'update'])->name('admin.editberita');
+      Route::get('/admin/deleteberita/{id}', [BeritaController::class, 'destroy']);
+      Route::delete('/admin/selected',[BeritaController::class, 'deleteAll'])->name('admin.delete');
 });
