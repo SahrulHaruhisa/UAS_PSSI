@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
@@ -55,4 +56,10 @@ Route::middleware('auth','adminMiddleware')->group(function () {
       Route::post('/admin/updatemacth_ticket/{id}', [MacthTiketController::class, 'update'])->name('admin.editmacth_ticket');
       Route::get('/admin/deletemacth_tiket/{id}', [MacthTiketController::class, 'destroy']);
       Route::delete('/admin/selected',[MacthTiketController::class, 'deleteAll'])->name('admin.delete');
+
+      // ticketplayeroute
+      Route::get('/admin/player', [PlayerController::class, 'index'])->name('admin.player');
+      Route::get(' /admin/tambahplayer', [PlayerController::class, 'create'])->name('admin.tambahplayer');
+      Route::post('/admin/insertplayer', [PlayerController::class, 'store']);
+     
 });

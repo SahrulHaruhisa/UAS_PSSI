@@ -5,25 +5,27 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
 <!-- Default theme -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @section('content')
 <figure class="product-management">
                 <header class="product-head">
                   <div class="product-title">
-                    <h2>Product</h2>
-                    <p>Let's grow to your business!Create your product and upload here</p>
+                    <h2>Player</h2>
+                    <p>Let's grow to your business!Create your player and upload here</p>
                   </div>
-                  <div class="col-md-6 mb-3">
-                <form action="/admin/macth_ticket"" method="GET">
+                  
+                <form action="/admin/dashboard" method="GET">
                  <input type="search" name="search"  class="form-control" id="inputPassword4" placeholder="Search heree bro">
                 </form>
-                 </div>
-                    <a href="/admin/tambahmacth_ticket" class="Add-data">
+                <div class="col-md-6 mb-3">
+                    <a href="/admin/tambahplayer" class="Add-data">
                         +create data
                     </a>
                     <a href="#" class="Delete-data" id="deleteAllSelect">
                         Delete
                     </a>
+                    </div>
                 </header>
             </figure>
             <figure class="table-container">
@@ -31,37 +33,45 @@
                     <thead>
                         <tr>
                         <th><input type="checkbox" name="" id="select_all_ids" ></th>
-                            <th>Jenis Pertandingan</th>
-                            <th>imageT1</th>
-                            <th>ImageT2</th>
-                            <th>Jam</th>
-                            <th>Location</th>
-                            <th>Tanggal macth</th>
-                            <th>Hari</th>
+                            <th>Nama depan</th>
+                            <th>Nama Belakang</th>
+                            <th>Tanggal lahir</th>
+                            <th>Desck1</th>
+                            <th>Desck2</th>
+                            <th>Desck3</th>
+                            <th>Desck4</th>
+                            <th>foto1</th>
+                            <th>foto2</th>
+                            <th>foto3</th>
+                            <th>foto4</th>
+                            <th>fotoprofile</th>
                             <th>Action</th>
                             <th>Crafted</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($data as $ticket)
-                        <tr id="slider_ids{{$ticket ->id}}">
-                            <td><input type="checkbox" name="ids" id="checkbox_ids" class="checkbok_ids" value="{{$ticket ->id}}"></td>
-                            <td>
-                            {{$ticket ->jenis_macth}}</td>
-                            <td><img src="{{asset($ticket->imageT1)}}" alt="" srcset=""></td>
-                            <td><img src="{{asset($ticket->imageT2)}}" alt="" srcset=""></td>
-                            <td>{{$ticket ->jam}}</td>
-                            <td>{{$ticket ->location}}</td>
-                            <td>{{$ticket ->tanggal_macth}}</td>
-                            <td>{{$ticket ->hari}}</td>
-                            <td><a href="/admin/editmacth_ticket/{{$ticket->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                    @foreach($data as $player)
+                        <tr id="slider_ids{{$player ->id}}">
+                            <td><input type="checkbox" name="ids" id="checkbox_ids" class="checkbok_ids" value="{{$player ->id}}"></td>
+                            <td>{{$player->nama_depan}}</td>
+                            <td>{{$player->nama_belakang}}</td>
+                            <td>{{$player->tanggal_lahir}}</td>
+                            <td>{{$player->desck1}}</td>
+                            <td>{{$player->desck2}}</td>
+                            <td>{{$player->desck3}}</td>
+                            <td>{{$player->desck4}}</td>
+                            <td><img src="{{asset($player->foto1)}}" alt="" srcset=""></td>
+                            <td><img src="{{asset($player->foto2)}}" alt="" srcset=""></td>
+                            <td><img src="{{asset($player->foto3)}}" alt="" srcset=""></td>
+                            <td><img src="{{asset($player->foto4)}}" alt="" srcset=""></td>
+                            <td><img src="{{asset($player->fotoprofile)}}" alt="" srcset=""></td>
+                            <td class="flex flex-col gap-2"><a href="/admin/editslide/{{$player->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
                                 <a href="" class="Show"><i class="fa-solid fa-eye"></i>Show</a>
-                                <a href="#" class="Delete" data-id="{{$ticket->id}}"><i class="fa-regular fa-trash-can"></i>Delete</a></td>
-                            <td>{{$ticket-> created_at->format('D M Y')}}</td>
+                                <a href="#" class="Delete" data-id="{{$player->id}}"><i class="fa-regular fa-trash-can"></i>Delete</a></td>
+                            <td>{{$player->created_at->format('D M Y')}}</td>
                         </tr>
                         @endforeach
                         
-                       
                         
                        
                     </tbody>
@@ -87,7 +97,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location ="/admin/deletemacth_tiket/"+sliderid+""
+                        window.location ="/admin/delete/"+sliderid+""
                       swal("Poof! Your imaginary file has been deleted!", {
                        icon: "success",
                  });

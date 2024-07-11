@@ -11,9 +11,15 @@ class MacthTiketController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = macth_tiket::all(); 
+        if($request->has('search')){
+            $data = macth_tiket::where('jenis_macth','LIKE','%' .$request->search. '%')->paginate(4);
+        }
+        else{
+            $data = macth_tiket::paginate(4);
+        }
+      
         return view('admin.macth_ticket',compact('data'));
     }
 
