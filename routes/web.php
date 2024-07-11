@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProfileController;
@@ -61,5 +62,13 @@ Route::middleware('auth','adminMiddleware')->group(function () {
       Route::get('/admin/player', [PlayerController::class, 'index'])->name('admin.player');
       Route::get(' /admin/tambahplayer', [PlayerController::class, 'create'])->name('admin.tambahplayer');
       Route::post('/admin/insertplayer', [PlayerController::class, 'store']);
-     
+      Route::get('/admin/editplayer/{id}', [PlayerController::class, 'edit'])->name('admin.editplayer');
+      Route::post('/admin/updateplayer/{id}', [PlayerController::class, 'update'])->name('admin.editplayer');
+      Route::get('/admin/deletplayer/{id}', [MacthTiketController::class, 'destroy']);
+      Route::delete('/admin/selected',[MacthTiketController::class, 'deleteAll'])->name('admin.delete');
+
+      // beritaroute
+      Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita');
+      Route::get(' /admin/tambahberita', [BeritaController::class, 'create'])->name('admin.tambahberita');
+      Route::post('/admin/insertberita', [BeritaController::class, 'store']);
 });

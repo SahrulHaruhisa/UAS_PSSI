@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_depan');
             $table->string('nama_belakang');
             $table->string('tanggal_lahir');
+            $table->integer('no_punggung');
             $table->string('Desck1');
             $table->string('Desck2');
             $table->string('Desck3');

@@ -23,6 +23,7 @@ class MacthTiketController extends Controller
         return view('admin.macth_ticket',compact('data'));
     }
 
+   
     /**
      * Show the form for creating a new resource.
      */

@@ -44,8 +44,8 @@
                     <ul class="sub-menu blank">
                         <li><a href="" class="class-name">Home Controller</a></li>
                         <li><a href="/admin/tambahslider">Slider Crud </a></li>
-                        <li><a href="">Berita Crud </a></li>
-                        <li><a href=""> Slider Edit </a></li>
+                        <li><a href="/admin/player">Player Crud </a></li>
+                        <li><a href="/admin/berita"> Berita Crud </a></li>
                     </ul>
                 </li>
                 <li>

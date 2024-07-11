@@ -15,10 +15,10 @@
                     <p>Let's grow to your business!Create your player and upload here</p>
                   </div>
                   
-                <form action="/admin/dashboard" method="GET">
+                <form action="/admin/player" method="GET">
                  <input type="search" name="search"  class="form-control" id="inputPassword4" placeholder="Search heree bro">
                 </form>
-                <div class="col-md-6 mb-3">
+                <div class="flex gap-9">
                     <a href="/admin/tambahplayer" class="Add-data">
                         +create data
                     </a>
@@ -56,16 +56,16 @@
                             <td>{{$player->nama_depan}}</td>
                             <td>{{$player->nama_belakang}}</td>
                             <td>{{$player->tanggal_lahir}}</td>
-                            <td>{{$player->desck1}}</td>
-                            <td>{{$player->desck2}}</td>
-                            <td>{{$player->desck3}}</td>
-                            <td>{{$player->desck4}}</td>
+                            <td>{{$player->Desck1}}</td>
+                            <td>{{$player->Desck2}}</td>
+                            <td>{{$player->Desck3}}</td>
+                            <td>{{$player->Desck4}}</td>
                             <td><img src="{{asset($player->foto1)}}" alt="" srcset=""></td>
                             <td><img src="{{asset($player->foto2)}}" alt="" srcset=""></td>
                             <td><img src="{{asset($player->foto3)}}" alt="" srcset=""></td>
                             <td><img src="{{asset($player->foto4)}}" alt="" srcset=""></td>
                             <td><img src="{{asset($player->fotoprofile)}}" alt="" srcset=""></td>
-                            <td class="flex flex-col gap-2"><a href="/admin/editslide/{{$player->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                            <td class="flex flex-col gap-2"><a href="/admin/editplayer/{{$player->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
                                 <a href="" class="Show"><i class="fa-solid fa-eye"></i>Show</a>
                                 <a href="#" class="Delete" data-id="{{$player->id}}"><i class="fa-regular fa-trash-can"></i>Delete</a></td>
                             <td>{{$player->created_at->format('D M Y')}}</td>
@@ -97,7 +97,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location ="/admin/delete/"+sliderid+""
+                        window.location ="/admin/deleteplayer/"+sliderid+""
                       swal("Poof! Your imaginary file has been deleted!", {
                        icon: "success",
                  });
