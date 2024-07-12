@@ -6,6 +6,29 @@
 <!-- Default theme -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+<style>
+  @media screen and (max-width: 768px){
+    .table td:nth-child(2)::before{
+        content: "jenis";
+    }
+    .table td:nth-child(3)::before{
+        content: "Sold";
+    }
+    .table td:nth-child(4)::before{
+        content: "Ratting";
+    }
+    .table td:nth-child(5)::before{
+        content: "Action";
+    }
+    .table td:nth-child(6)::before{
+        content: "Crafted";
+    }
+    .table td::before{
+        float: left;
+        
+    }
+  }
+</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @section('content')
 <figure class="product-management">
@@ -18,7 +41,7 @@
                 <form action="/admin/berita" method="GET">
                  <input type="search" name="search"  class="form-control" id="inputPassword4" placeholder="Search heree bro">
                 </form>
-                <div class="flex gap-9">
+                <div class="flex gap-12">
                     <a href="/admin/tambahberita" class="Add-data">
                         +create data
                     </a>
@@ -63,7 +86,7 @@
                             <td><img src="{{asset($berita->foto_1)}}" alt="" srcset=""></td>
                             <td><img src="{{asset($berita->foto_2)}}" alt="" srcset=""></td>
                             <td><img src="{{asset($berita->foto_3)}}" alt="" srcset=""></td>
-                            <td><a href="/admin/editslide/{{$berita->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                            <td><a href="/admin/editberita/{{$berita->id}}" class="Edit"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
                                 <a href="" class="Show"><i class="fa-solid fa-eye"></i>Show</a>
                                 <a href="#" class="Delete" data-id="{{$berita->id}}"><i class="fa-regular fa-trash-can"></i>Delete</a></td>
                             <td>{{$berita-> created_at->format('D M Y')}}</td>

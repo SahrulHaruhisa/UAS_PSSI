@@ -106,7 +106,7 @@ class MacthTiketController extends Controller
             // Upload new imageT1
             $file = $request->file('imageT1');
             $filename = time() . '_1.' . $file->getClientOriginalExtension();
-            $path = 'uploads/Imaget_2/';
+            $path = 'uploads/Imaget_1/';
             $file->move(public_path($path), $filename);
             $data->imageT1 = $path . $filename;
         }

@@ -502,6 +502,10 @@ font-size: 14px;
         .navigation{
             padding: 0 auto;
         }
+        .table-container{
+            width: 700px;
+            overflow: scroll;
+        }
 }
 
 @media screen and (max-width: 768px){
@@ -672,7 +676,7 @@ font-size: 14px;
     .table td{
         display: block;
        padding: 10px ;
-       text-align: right;
+       text-align: center;
       
     }
     .table td a:first-child{
@@ -696,25 +700,9 @@ font-size: 14px;
         color: var(--color-dark);
         
     }
-    .table td:nth-child(2)::before{
-        content: "harga";
-    }
-    .table td:nth-child(3)::before{
-        content: "Sold";
-    }
-    .table td:nth-child(4)::before{
-        content: "Ratting";
-    }
-    .table td:nth-child(5)::before{
-        content: "Action";
-    }
-    .table td:nth-child(6)::before{
-        content: "Crafted";
-    }
-    .table td::before{
-        float: left;
-        
-    }
+  .product-title{
+    display: none;
+  }
     .product-head{
         padding: 20px;
     }
