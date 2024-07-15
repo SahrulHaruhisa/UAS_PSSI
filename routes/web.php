@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\SliderController;
@@ -28,7 +29,8 @@ require __DIR__.'/auth.php';
 
 Route::middleware('auth','userMiddleware')->group(function () {
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
-    
+    Route::get('dashboard', [Homecontroller::class, 'index'])->name('dashboard');
+
     
 });
 Route::middleware('auth','adminMiddleware')->group(function () {
@@ -45,7 +47,7 @@ Route::middleware('auth','adminMiddleware')->group(function () {
     Route::get('/admin/hasil_macth', [HasilPertandinganController::class, 'index'])->name('admin.hasil_macth');
     Route::get('/admin/tambahhasil_macth', [HasilPertandinganController::class, 'create'])->name('admin.tambahhasil_macth');
     Route::post('/admin/inserthasil_macth', [HasilPertandinganController::class, 'store']);
-    Route::get('/admin/edithasilmacth/{id}', [HasilPertandinganController::class, 'edit'])->name('admin.edithasilmacth');
+    Route::get('/admin/edithasil_macth/{id}', [HasilPertandinganController::class, 'edit'])->name('admin.edithasilmacth');
     Route::post('/admin/updatehasilmacth/{id}', [HasilPertandinganController::class, 'update'])->name('admin.edithasilmacth');
     Route::get('/admin/deletehasilmacth/{id}', [HasilPertandinganController::class, 'destroy']);
 

@@ -46,6 +46,7 @@
                         <li><a href="/admin/tambahslider">Slider Crud </a></li>
                         <li><a href="/admin/player">Player Crud </a></li>
                         <li><a href="/admin/berita"> Berita Crud </a></li>
+                        <li><a href="/admin/hasil_macth"> Hasil MacthCrud </a></li>
                     </ul>
                 </li>
                 <li>
