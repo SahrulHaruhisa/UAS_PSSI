@@ -1,0 +1,3 @@
+[build]
+  command = "composer install && npm run build"  # Sesuaikan dengan perintah build Anda
+  publish = "public"  # Folder hasil build yang ingin dipublikasikan
