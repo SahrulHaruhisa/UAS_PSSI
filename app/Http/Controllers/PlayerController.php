@@ -13,7 +13,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $data = player::paginate(4); 
+        $data = player::paginate(2); 
         return view('admin.player',compact('data'));
     }
 
@@ -39,8 +39,8 @@ class PlayerController extends Controller
             'Desck2' => $request->Desck2,
             'Desck3' => $request->Desck3,
             'Desck4' => $request->Desck4,
-            'foto_1' => $request->foto1,
-            'foto_2' => $request->foto2,
+            'foto1' => $request->foto1,
+            'foto2' => $request->foto2,
             'foto3' => $request->foto3,
             'foto4' => $request->foto4,
             'fotoprofile' => $request->fotoprofile,

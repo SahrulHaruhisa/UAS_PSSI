@@ -58,19 +58,26 @@
             </main>
             @foreach($datas as $macth)
             <main class="wrapper-hsl">
+                
                 <div class="img8x">
                     <div class="team">
                         <span>{{$macth -> nm_team1}}</span>
                     </div>
                     <img src="{{asset($macth->img_1)}}" alt="" srcset="">
                 </div>
-                <h2 class="skor">6-1</h2>
+                <div class="skor"> 
+               <p >{{$macth -> skor}}</p>
+               
+            </div>
                 <div class="img8x">
+                <img src="{{asset($macth->img_2)}}" alt="" srcset="">
                     <div class="team">
                         <span>{{$macth -> nm_team2}}</span>
                     </div>
-                    <img src="{{asset($macth->img_2)}}" alt="" srcset="">
+                    
                 </div>
+               
+                
             </main>
                @endforeach
         </figure>
@@ -122,186 +129,47 @@
     <section class="slider-ticket">
         <div class="wrapper-slide">
             <ul class="carousel">
+                @foreach($ticket as $tickets)
                 <li class="card">
-                    <h2>Jenis liga</h2>
+                    <h2>{{$tickets ->jenis_macth}}</h2>
                     <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
+                        <p>{{$tickets ->hari}}{{$tickets ->tanggal_macth}},</p>
+                        <p>{{$tickets ->jam}}{{$tickets ->location}}</p>
                     </div>
                     <div class="macth-containers">
-                        <img src="img/indo.png" alt="" srcset="">
+                        <img src="{{$tickets->imageT1}}" alt="" srcset="">
                         <h3 class="hasil-skor">
-                            3-2
+                        {{$tickets ->jam}}
                         </h3>
-                        <img src="img/itali.png" alt="">
+                        <img src="{{$tickets->imageT2}}" alt="">
                     </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
+                    
                     <div class="macth-preview">
                         <p>Macth review</p>
                     </div>
                 </li>
+                @endforeach
+
+                @foreach($datas as $datas)
                 <li class="card">
-                    <h2>Jenis liga</h2>
+                    <h2>{{$datas ->type_pertandingan}}</h2>
                     <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
+                        <p>{{$datas ->hari}}{{$datas ->tanggal_macth}}</p>
+                        <p>{{$datas ->jam}}{{$datas ->location}}</p>
                     </div>
                     <div class="macth-containers">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
+                        <img src="{{$datas->img_1}}" alt="" srcset="">
+                        <h3 class="hasil-skors">
+                        {{$datas ->skor}}
                         </h3>
-                        <img src="img/itali.png" alt="">
+                        <img src="{{$datas->img_2}}" alt="">
                     </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
+                    <h1>{{$datas -> nm_team1}}vs{{$datas -> nm_team2}}</h1>
                     <div class="macth-preview">
                         <p>Macth review</p>
                     </div>
                 </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers" draggable="false">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers" draggable="false">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers" draggable="false">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers" draggable="false">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers" draggable="false">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <h2>Jenis liga</h2>
-                    <div class="tanggal-main">
-                        <p>Thursday 16 mei 2024</p>
-                        <p>02.00,Gelora Bungkarno</p>
-                    </div>
-                    <div class="macth-containers" draggable="false">
-                        <img src="img/indo.png" alt="" srcset="">
-                        <h3 class="hasil-skor">
-                            3-2
-                        </h3>
-                        <img src="img/itali.png" alt="">
-                    </div>
-                    <h1>Indonesia u16 vs italia u16</h1>
-                    <div class="macth-preview">
-                        <p>Macth review</p>
-                    </div>
-                </li>
+                @endforeach
                 <li class="button-action2">
                     <i class="fa-solid fa-chevron-left "></i>
                     <i class="fa-solid fa-chevron-right "></i>

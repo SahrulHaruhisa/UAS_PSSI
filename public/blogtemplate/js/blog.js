@@ -262,7 +262,7 @@ gsap.registerPlugin(ScrollTrigger);
 // })
 
 gsap.to(".boxberita",{
-  x:200,
+  x:150,
   duration:3,
   scrollTrigger:{
     trigger:".boxberita",

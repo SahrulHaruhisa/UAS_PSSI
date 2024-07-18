@@ -27,9 +27,11 @@
     --color-white: #fff;
     --color-info-dark: #7d8da1;
     --color-dark: #07080a;
+    --color-dark2: #07080a;
+    --color-dark3: #4a4c50;
     --color-light: rgba(132, 139, 200, 0.18);
     --color-dark-variant: #677483;
-    --color-background: #f6f6f9;
+    --color-background: #ececf8;
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
@@ -50,9 +52,11 @@ body.dark{
     --body-color: #18191A;
     --nav-color: #242526;
     --side-nav: #242526;
+    --color-dark2: #0b216a;
     --text-color: #CCC;
     --color-background: #181a1e;
     --color-white: #202528;
+    --color-dark: #edeffd;
     --color-dark: #edeffd;
     --color-dark-variant: #a3bdcc;
     --color-light: rgba(0, 0, 0, 0.4);
@@ -208,15 +212,19 @@ nav.active .menu{
 }
 .bx-menu{
     font-size: 2rem;
+    color: var(--color-background);
+    
 }
-
+.nav-bar p{
+    font-weight: 900;
+}
 nav.active .nav-bar .navLogo a{
     opacity: 0;
     transition: all 0.3s ease;
 }
 .nav-bar{
-  background-color: var(--side-nav);
-  color: var(--body-color);
+  background-color: var(--color-dark2);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -348,11 +356,11 @@ nav.active .nav-bar .navLogo a{
 }
 .hasil-macth{
     display: grid;
-   grid-template-columns: 1fr;
-    box-shadow: var(--box-shadow);
-    grid-template-rows: 70px 70px 70px 70px 70px;
-    padding: 2px;
-    text-align: center;
+    grid-template-columns: 1fr;
+     box-shadow: var(--box-shadow);
+     grid-template-rows: 70px 70px 70px 70px 70px;
+     padding: 2px;
+     text-align: center;
 }
 
 .wrapper h1{
@@ -365,19 +373,20 @@ nav.active .nav-bar .navLogo a{
 .wrapper-hsl{
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-dark-variant);
-    padding: 0px 15px;
+    
+    background-color: var(--color-white);
+    padding: 0px 5px;
     align-items: center;
-   
+   color: var(--color-dark);
     
 }
 .wrapper-hsl:nth-child(odd){
-    background-color: var(--color-white);
+    background-color: var(--color-dark-variant);
 }
 .wrapper-hsl .img8x{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 1px;
    
 }
 .wrapper-hsl .img8x img{
@@ -390,6 +399,7 @@ nav.active .nav-bar .navLogo a{
     font-size: 15px;
     padding: 8px 15px;
 }
+
 .navigation-invisible .slide-icon.active img{
     filter: brightness(1.5);
     
@@ -447,18 +457,20 @@ font-size: 3.5rem;
 .boxberita{
     background-color: var(--color-background);
     border-radius: 3mm;
-    height: 450px;
+    height: 500px;
     overflow: hidden;
     
 }
+
 .boxberita:nth-child(1){
 grid-column-start: 1;
 grid-column-end: 3;
 display: flex;
+height: 400px;
 
 }
 .boxberita:nth-child(2){
-    
+    height: 400px;
     display: flex;
     
     }
@@ -507,7 +519,9 @@ text-transform: uppercase;
     grid-column-start: 3;
     display: flex;
     }
-.boom img{
+
+
+    .boom img{
     width: 350px;
     height: 100%;
     border-radius: 0;
@@ -552,6 +566,7 @@ text-transform: uppercase;
     padding: 20px;
     width: 250px;
     border-radius: 10px;
+    color: var(--color-dark);
     /* scroll-snap-align: start; */
 }
 .card:hover{
@@ -565,13 +580,33 @@ text-transform: uppercase;
 .tanggal-main{
     text-align: center;
     padding: 20px 0px;
+    text-transform: capitalize;
+}
+.tanggal-main p:nth-child(1){
+    text-transform:initial;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.tanggal-main p:nth-child(2){
+    text-transform:initial;
+    font-size: 10px;
 }
 .hasil-skor{
     background-color: var(--color-dark);
     color: var(--color-background);
     padding: 2px 10px;
     font-size: 30px;
+    border-radius: 1mm;
 
+}
+.hasil-skors{
+    background-color: var(--color-dark3);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 1mm;
 }
 .macth-containers{
     display: flex;
@@ -584,15 +619,17 @@ object-fit: cover;
 height: 50px;
 }
 .card h1{
-    font-size: 13px;
+    font-size: 10px;
     text-align: center;
-    padding: 10px 0px;
+    padding: 10px ;
+    
     font-weight: 900;
     text-transform: uppercase;
+    
 }
 .macth-preview{
     background: var(--color-white);
-    margin: 0px 20px;
+    margin: 10px 20px;
     text-align: center;
     padding: 15px 0px;
     border-radius: 20px;
@@ -1035,7 +1072,7 @@ height: 50px;
     }
     @media screen and (max-width: 557px){
         .pssi-section{
-            width: 210%;
+            width: 110%;
             grid-template-columns: 1fr;
                margin: 60px 30px;
            }
@@ -1051,13 +1088,26 @@ height: 50px;
         }
         .berita-section{
             display: grid;
-            grid-template-columns: repeat(3,270px);
+            grid-template-columns: repeat(1,270px);
             margin-bottom: 10%;
             margin-top: 10%;
-            padding: 0px 12%;
+            padding: 0px 0%;
             gap: 40px 10px;
             width: 190%;
         }
+        .boxberita:nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 1;
+            display: flex;
+            height: 400px;
+            
+            }
+            .boxberita:nth-child(2){
+                height: 400px;
+                display: flex;
+                grid-column-start: 1;
+            grid-column-end: 1;
+                }
     }
     @media screen and (max-width: 381px){
         .pssi-section{
@@ -1072,11 +1122,11 @@ height: 50px;
         }
         .berita-section{
             display: grid;
-            grid-template-columns: repeat(3,270px);
+            grid-template-columns: repeat(2,270px);
             margin-bottom: 10%;
             margin-top: 10%;
             padding: 0px 20%;
             gap: 40px 10px;
-            width: 250%;
+            width: 100%;
         }
     }
