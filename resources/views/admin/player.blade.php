@@ -1,6 +1,11 @@
 @extends('admin.appadmin')
 @push('css')
-
+<style> @media screen and (max-width: 768px){
+    .table {
+      overflow-x:auto;
+      
+    }
+  }</style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
 <!-- Default theme -->

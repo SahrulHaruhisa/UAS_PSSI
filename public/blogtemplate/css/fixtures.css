@@ -153,15 +153,18 @@ body.dark{
   .fixtures-box  .btns a{
     color: #e5e5e7;
   }
+  .fixtures{
+    padding-top: 20%;
+  }
   .Fixtures-head{
     padding: 2.6rem 0;
     
   }
-  .Fixtures-head form{
+  .Fixtures-head .cari{
     border-bottom: 2px solid black;
     width: 320px;
   }
-  .Fixtures-head input{
+  .Fixtures-head .cari input{
     text-decoration: none;
   border: none;
     background-color: transparent;
@@ -205,7 +208,7 @@ body.dark{
         background-image: url(stadium.jpeg);
        background-repeat: no-repeat;
        background-size: cover;
-        height: 350px;
+        height: 450px;
         background-position: center;
         gap: 80px;
         padding:200px 20px;
@@ -248,11 +251,11 @@ body.dark{
         background-color: transparent;
 
       }
-      .menu {
+      .menus {
         display: none; /* Menyembunyikan menu secara default */
     }
     
-    .menu.show {
+    .menus.show {
         display: block; /* Menampilkan menu ketika kelas 'show' ditambahkan */
     }
     .rotate{

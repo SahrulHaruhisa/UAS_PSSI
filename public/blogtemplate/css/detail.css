@@ -40,8 +40,9 @@
 }
 
 body{
-    height: 150vh;
+    height: 180vh;
     background-color: var(--body-color);
+    color: var(--color-dark);
  
 }
 
@@ -120,6 +121,13 @@ body.dark{
    padding:0 20%;
    font-size: 18px;
 }
+.paragraf2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:10% 20%;
+    font-size: 18px;
+ }
 .paragraf1 p{
     padding: 10px 0px;
 }

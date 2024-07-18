@@ -44,7 +44,7 @@
 }
 
 body{
-    height: 100vh;
+    height: 350vh;
     background-color: var(--body-color);
 }
 
@@ -334,11 +334,12 @@ nav.active .nav-bar .navLogo a{
     overflow: hidden;
     gap: 40px;
     padding: 30px 9%;
-    opacity: 0;
+   
 }
 .Sliderhome {
     position: relative;
     overflow: hidden;
+    transform: translate(500px);
    
 }
 .Sliderhome .item{
@@ -423,6 +424,7 @@ nav.active .nav-bar .navLogo a{
      grid-template-rows: 70px 70px 70px 70px 70px;
      padding: 2px;
      text-align: center;
+     transform: translate(-600px);
 }
 
 .wrapper h1{
@@ -471,18 +473,18 @@ nav.active .nav-bar .navLogo a{
 /* star-shintaeyon-section */
 .shintaeyong-section{
     width: 100%;
-    
+    transform: translateX(-550px);
     position: relative;
 }
 .shintaeyong-section img{
     width: 100%;
     height: 85vh;
-    transform: translate(500px);
+    
 }
 .shintaeyong-section .content-hero{
     margin-top: -8.5rem;
     padding: 0px 30px;
-    transform: translate(500px);
+    
 }
 .shintaeyong-section .content-hero .border{
     width: 80px;
@@ -529,6 +531,8 @@ font-size: 3.5rem;
     border-radius: 3mm;
     height: 500px;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(-100px);
     
 }
 .boxberitas{
@@ -650,8 +654,7 @@ text-transform: uppercase;
     margin-top: 5.6rem;
     background-color: rgb(232, 223, 186);
     grid-template-rows: 350px;
-    opacity: 0;
-    transform: translate(-500px);
+    
     
 }
 .wrapper-slide{
@@ -813,7 +816,7 @@ height: 50px;
         z-index: 100;
     }
     nav .nav-bar {
-        max-width: 72%;
+        max-width: 100%;
     }
     nav .nav-bar .sidebarOpen{
         color: var(--text-color);
@@ -973,13 +976,13 @@ height: 50px;
     }
     .pssi-section{
         display: grid;
-        grid-template-columns:60rem 33rem ;
+        grid-template-columns:40rem 23rem ;
         padding: 60px 0;
         grid-template-rows: 450px;
         overflow: hidden;
         gap: 40px;
-        padding: 90px 10%;
-        width: 190%;
+        padding: 90px 0%;
+        
     }
     .search-field input{
         height: 100%;
@@ -1009,7 +1012,8 @@ height: 50px;
     .slider-ticket{
         background-color: rgb(232, 223, 186);
         padding: 30px 0;
-        width: 200%;
+        width: 100%;
+        overflow: hidden;
     }
     body.dark .search-field i{
         color: var(--text-color);
@@ -1048,7 +1052,7 @@ height: 50px;
                 margin-top: 10%;
                 padding: 0px 10%;
                 gap: 10px;
-                width: 190%;
+              
                 
             }
             .boxberita img{
@@ -1061,6 +1065,28 @@ height: 50px;
             .shintaeyong-section .content-hero h2{
                 font-size: 2.3rem;
             }
+}
+@media screen and (max-width: 1100px){
+    .pssi-section{
+        display: grid;
+        grid-template-columns:25rem 23rem ;
+        padding: 60px 0;
+        grid-template-rows: 450px;
+        overflow: hidden;
+        gap: 40px;
+        padding: 90px 0%;
+        
+    }
+    .berita-section{
+        display: grid;
+        grid-template-columns: repeat(3,250px);
+        margin-bottom: 10%;
+        margin-top: 10%;
+        padding: 0px 5%;
+        gap: 10px;
+      
+        
+    }
 }
 @media screen and (max-width: 790px) {
     nav .nav-bar .sidebarOpen{
@@ -1133,7 +1159,7 @@ height: 50px;
         font-size: 50px;
     }
     nav .nav-bar{
-        max-width: 45%;
+        max-width: 100%;
         
     }
     .card  img{
@@ -1153,9 +1179,9 @@ height: 50px;
             padding: 40px 0px;
         }
         .pssi-section{
-         width: 155%;
-         grid-template-columns: 1fr;
-            margin: 60px 10px;
+        width: 100%;
+       grid-template-columns: 1fr;
+            margin: 60px 170px;
         }
         .slider-ticket{
             background-color: rgb(232, 223, 186);
@@ -1164,11 +1190,11 @@ height: 50px;
             height: 600px;
         }
         .shintaeyong-section {
-            width: 100%;
-            transform: translateX(500);
+            
+           transform: translateX(-150px);
         }
         .shintaeyong-section img{
-            width: 270%;
+            width: 170%;
             height: 85vh;
         }
         .shintaeyong-section .content-hero h2{
@@ -1179,7 +1205,7 @@ height: 50px;
             grid-template-columns: repeat(3,270px);
             margin-bottom: 10%;
             margin-top: 10%;
-            padding: 0px 0%;
+            padding: 0px 10%;
             gap: 40px 10px;
             width: 150%;
         }

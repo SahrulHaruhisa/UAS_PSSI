@@ -5,23 +5,21 @@
 @section('contents')
 
 
-    @push('csss')
+    
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="{{asset('blogtemplate/css/coba.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-<<<<<<< HEAD
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @endpush
+    
      <title>Responsive Navigation Menu Bar</title>
 
-=======
 
-     <title>Responsive Navigation Menu Bar !!!</title>
 </head>
->>>>>>> 1f40fa4c7f7ca530173e6bd352e393b7d43555bc
+
 <body>
 
 
@@ -152,7 +150,7 @@
         </h4>
         <a href="/semuapertandingan">Semua pertandingan<a >
         </div>
-    <section class="slider-ticket">
+        <section class="slider-ticket">
         
         <div class="wrapper-slide">
             <ul class="carousel">
@@ -206,15 +204,217 @@
 
         </div>
     </section>
-    @push('jsss')
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{asset('blogtemplate/js/blog.js')}}"></script>
     <script>
+        
 
+const wrapper = document.querySelector(".wrapper-slide");
+const carousel = document.querySelector(".carousel");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".button-action2 i");
+const carouselChildrens = [...carousel.children];
+
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+    if(!isDragging) return; // if isDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+
+const autoPlay = () => {
+    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2500 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+
+
+
+
+const tl =gsap.timeline()
+
+// tl.from(".logo img",{
+//   y:-20,
+//   duration:2,
+//   delay:0.1,
+//   opacity:0,
+//   stagger:0.2
+// });
+// tl.from(".nav-bar p",{
+//   y:5,
+//   duration:2,
+//   delay:1,
+//   opacity:0.8,
+//   stagger:0.1
+// });
+// tl.from(".darkLight-searchBox .bx-menu, .darkLight-searchBox .bx-moon, .darkLight-searchBox .bx-search",{
+//   y:1,
+//   duration:2,
+//   delay:0.2,
+//   opacity:1,
+//   stagger:0.1,
+   
+// });
+
+// tl.from(".Sliderhome .content p",{
+//   x:50,
+//   duration:2,
+//   delay:2,
+//   opacity:1,
+//   stagger:0.5
+// });
+// tl.from(".pssi-section",{
+//   x:-50,
+//   duration:3,
+//   delay:2,
+//   opacity:1,
+//   stagger:0.5
+// });
+// tl.from(".slider-ticket",{
+//   x:0,
+//   duration:10,
+//   delay:1,
+//   opacity:1,
+//   stagger:0.5
+// });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+// gsap.to(".pssi-section",{
+//   x:100,
+//   duration:3,
+//   opacity:1,
+//   scrollTrigger:{
+//     trigger:".boxberita",
+//     start:"top 0%",
+//     end:"center 20%",
+   
+//   }
+// })
+
+
+
+
+
+// gsap.from(".slider-ticket",{
+//   x:0,
+//   duration:10,
+//   delay:1,
+//   opacity:1,
+//   scrollTrigger:{
+//     trigger:".slider-ticket",
+//     start:"top 30%",
+//     end:"center 20%",
+   
+//   }
+// });
+tl.from(".Sliderhome ",{
+   x:0,
+   duration:2,
+   delay:2,
+   opacity:1,
+   stagger:0.5
+ });
+ tl.from(".hasil-macth ",{
+   x:0,
+   duration:2,
+   delay:2,
+   opacity:1,
+   stagger:0.5
+ });
+ gsap.to(".shintaeyong-section",{
+  x:10,
+  duration:3,
+  scrollTrigger:{
+    trigger:".shintaeyong-section",
+    start:"top 20%",
+    end:"center 20%",
+   
+  }
+})
+gsap.to(".boxberita",{
+  opacity:1,
+  y:0,
+  duration:3,
+  scrollTrigger:{
+    trigger:".boxberita",
+    start:"top 20%",
+    end:"center 20%",
+   
+  }
+})
 
     </script>
-    @endpush
+    
 </body>
 </html>
 @endsection
