@@ -35,7 +35,7 @@ class Homecontroller extends Controller
         
         $tickets =   macth_tiket::paginate(1);
         $pertandingan =   Hasil_pertandingan::all();
-        $ticket =   macth_tiket::skip(1)->take(10)->get();
+        $ticket =   macth_tiket::skip(1)->take(5)->get();
         
         return view('semuapertandingan',compact('pertandingan','ticket','tickets'));
     }

@@ -23,7 +23,7 @@
         
         <section class="next-macth">
             @foreach($tickets  as $content1)
-            @endforeach
+          
             <figure class="content">
                 <h1>Next Match</h1>
                 <p>{{$content1 -> hari}}</p>
@@ -41,6 +41,7 @@
                    
                 </div>
             </figure>
+            @endforeach
         </section>
 
         <section class="fixtures">
@@ -51,7 +52,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </form>
                 
-</div>
+        </div>
             <article class="fixtures-wrapper">
               
                 
@@ -73,26 +74,70 @@
                         <h1>{{$content2 -> tanggal_macth}}, {{$content2 -> jam}}</h1>
                         <div class="img-macth">
                             <div class="box">
-                                <img src="{{asset($content1->imageT1)}}" alt="" srcset="">
+                                <img src="{{asset($content2->imageT1)}}" alt="" srcset="">
                                 
                             </div>
                             <h2>VS</h2>
                             <div class="box">
-                                <img src="{{asset($content1->imageT2)}}" alt="" srcset="">
+                                <img src="{{asset($content2->imageT2)}}" alt="" srcset="">
                                 
                             </div>
                         </div>
                         <div class="content">
                             <p>{{$content2 -> tanggal_macth}}</p>
+                            <h1><i class="fa-solid fa-location-dot"></i>{{$content2 -> location}}</h1>
+                        </div>
+                        <div class="btns">
+                            <a href="">Tickets news</a>
+                        </div>
+                    </div>
+                    
+                </figure>
+                @endforeach
+
+                
+            
+           
+              
+                
+            @foreach($pertandingan as $content)
+            
+                <figure class="fixtures-box">
+                    <div class="drop">
+                        <div class="dropdown">
+                            <img src="{{asset($content1->img_1)}}" alt="" srcset="" width="50px">
+                            <p>{{$content -> type_pertandingan}}</p>
+                            <div class="btns">
+                                <a href="">Tickets news</a>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-angle-down caret" id="toggle-menu"></i>
+                    </div>
+                    <div class="menus" id="menus">
+                       
+                        <div class="img-macth">
+                            <div class="box">
+                                <img src="{{asset($content->img_1)}}" alt="" srcset="" width="30px">
+                                <p>{{$content ->nm_team1}}</p>
+                            </div>
+                            <h2>{{$content -> skor}}</h2>
+                            <div class="box">
+                                <img src="{{asset($content->img_2)}}" alt="" srcset=""width="30px">
+                                <p>{{$content ->nm_team2}}</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>{{$content -> stadium}}</p>
                             <h1><i class="fa-solid fa-location-dot"></i>Gelora Bungkarno Stadium</h1>
                         </div>
                         <div class="btns">
                             <a href="">Tickets news</a>
                         </div>
                     </div>
+                   
                 </figure>
                 @endforeach
-            </article>
+         
            
         </section>
     </div>

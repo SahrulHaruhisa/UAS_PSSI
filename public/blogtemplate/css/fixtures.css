@@ -127,7 +127,9 @@ body.dark{
     background: rgba(233, 229, 229, 0.601);
     text-align: center;
  }
-
+.box p{
+  font-size: 10px;
+}
  .fixtures-box p{
     padding:5px 0;
  }
