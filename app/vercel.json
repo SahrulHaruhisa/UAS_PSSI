@@ -23,5 +23,5 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"
     },
-    "outpurDirectory": "public"
+    "outpurDirectory": "dist"
 }
