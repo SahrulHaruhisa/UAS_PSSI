@@ -12,28 +12,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<<<<<<< HEAD
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endpush
      <title>Responsive Navigation Menu Bar</title>
 
+=======
+
+     <title>Responsive Navigation Menu Bar !!!</title>
+</head>
+>>>>>>> 1f40fa4c7f7ca530173e6bd352e393b7d43555bc
 <body>
-    
+
 
 <div class="box">
     <section class="pssi-section">
         <figure class="Sliderhome">
             @foreach($data as $row)
             <main class="item active">
-               
+
                <img src="{{asset($row->image)}}" alt="">
-           
+
            <div class="content">
                <p>{{$row -> desc1}}</p>
 
            </div>
        </main>
             @endforeach
-           
+
             <div class="navigation-button">
                 <i class="fa-solid fa-chevron-left prev-button"></i>
                 <i class="fa-solid fa-chevron-right next-button"></i>
@@ -44,7 +50,7 @@
                 <img src="{{asset($row->image)}}" alt="" width="250px">
                 </div>
                 @endforeach
-            
+
             </div>
 
         </figure>
@@ -77,7 +83,7 @@
             </main>
                @endforeach
         </figure>
-    
+
     </section>
 </div>
 
@@ -112,7 +118,7 @@
   
 
     @foreach($berita as $berita)
-   
+
     <figure class="boxberita boom ">
         <img src="{{asset($berita ->img_bg)}}" alt="" srcset="">
         <div class="content">
@@ -120,11 +126,11 @@
             <h2>{{$berita -> type_umur}}</h2>
         <p>{{$berita -> title}}</p>
         <p>{{$berita -> created_at}}</p>
-    
+
     </div>
     </figure>
     @endforeach
-       
+
     @foreach($beritas as $beritas)
             <figure class="boxberita">
                 <img src="{{asset($beritas ->img_bg)}}" alt="" srcset="">
@@ -132,7 +138,7 @@
                 <div class="border"></div >
                 <h2>{{$beritas -> type_umur}}</h2>
             <p>{{$beritas -> title}}</p>
-            <p>{{$beritas -> created_at}}</p>    
+            <p>{{$beritas -> created_at}}</p>
         </div>
             </figure>
             @endforeach
@@ -196,8 +202,8 @@
                     <i class="fa-solid fa-chevron-right "></i>
                 </li>
             </ul>
-          
-            
+
+
         </div>
     </section>
     @push('jsss')
@@ -205,7 +211,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{asset('blogtemplate/js/blog.js')}}"></script>
     <script>
-      
+
 
     </script>
     @endpush

@@ -14,7 +14,7 @@
     @stack('css')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>Dashboard</title>
+    <title>Dashboard!</title>
 </head>
 <body>
     <div class="containers">
