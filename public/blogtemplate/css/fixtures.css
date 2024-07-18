@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+  
+    transition: all 0.4s ease;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #07080a;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 1rem 3rem var(--search-text);
+}
+
+body{
+    height: 150vh;
+    background-color: var(--body-color);
+ 
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --search-bar: #242526;
+}
+.container{
+    padding: 0 9%;
+    background-color: var(--color-background);
+    
+}
+.fa-angle-down{
+    opacity: 0;
+}
+.next-macth{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    background-image: url(stadium.jpeg);
+   background-repeat: no-repeat;
+   background-size: cover;
+    height: 350px;
+    background-position: center;
+    gap: 80px;
+         
+}
+.next-macth .content h1{
+    font-size: 33px;
+    color: var(--color-background);
+}
+.next-macth .content p{
+    font-size: 18px;
+    color: var(--color-background);
+}
+.next-macth .content h2{
+    font-size: 25px;
+    color: var(--color-background);
+}
+.next-macth .content i{
+    padding: 0px 5px;
+}
+.next-macth .content-team{
+    display: flex;
+    text-align: center;
+    gap: 3px;
+}
+.next-macth .content-team b{
+   padding: 13px 0;
+    font-size: 33px;
+    color: var(--color-background);
+}
+.next-macth .content-team p{
+ 
+     color: var(--color-background);
+ }
+ .fixtures-wrapper{
+    grid-template-columns: repeat(4,220px);
+    display: grid;
+    gap: 30px;
+ }
+ .img-macth{
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    padding: 10px 10px;
+ }
+ .img-macth img{
+    width: 50px;
+ }
+ .fixtures-box{
+    background: rgba(233, 229, 229, 0.601);
+    text-align: center;
+ }
+
+ .fixtures-box p{
+    padding:5px 0;
+ }
+ .fixtures-box .content{
+    text-align: center;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+ }
+ .fixtures-box .content h1{
+   font-size: 13px;
+    text-overflow: initial;
+    padding: 0px 5px;
+ }
+ .fixtures-box .content i{
+    
+     padding: 0px 8px;
+  }
+  .fixtures-box  .btns{
+    background-color: var(--color-danger);
+    text-align: center;
+   padding:5px 0px;
+  }
+  .fixtures-box  .btns a{
+    color: #e5e5e7;
+  }
+  .Fixtures-head{
+    padding: 2.6rem 0;
+    
+  }
+  .Fixtures-head form{
+    border-bottom: 2px solid black;
+    width: 320px;
+  }
+  .Fixtures-head input{
+    text-decoration: none;
+  border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 14px;
+    margin-top: 20px ;
+    width: 300px;
+  }
+  .Fixtures-head h2{
+    font-weight: 300;
+    border-bottom: 3px solid crimson;
+    width: 30px;
+  }
+  .Fixtures-head h2:hover{
+    
+    width: 80px;
+  }
+  .dropdown{
+    display: none;
+  }
+  @media screen and (max-width: 1200px){
+    .fixtures-wrapper{
+        grid-template-columns: repeat(3,220px);
+        display: grid;
+        gap: 30px;
+     }
+  }
+
+  @media screen and (max-width: 768px){
+    .fixtures-wrapper{
+        grid-template-columns: repeat(2,220px);
+        display: grid;
+        gap: 30px;
+        padding: 0 8%;
+     }
+     .next-macth{
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        flex-direction: column;
+        background-image: url(stadium.jpeg);
+       background-repeat: no-repeat;
+       background-size: cover;
+        height: 350px;
+        background-position: center;
+        gap: 80px;
+        padding:200px 20px;
+        
+             
+    }
+    .container{
+        padding: 0;
+    }
+    .next-macth .content h1,.next-macth .content h2,.next-macth .content p{
+        color: #e90000;
+        text-align: center;
+        font-weight: 500;
+    }
+    .next-macth .content p:nth-child(4){
+        position: absolute;
+        top:40%;
+        color: white;
+    }
+    .Fixtures-head{
+        padding:  20px;
+    }
+  }
+  @media screen and (max-width: 550px){
+    .fixtures-wrapper{
+        grid-template-columns: 1fr;
+        display: grid;
+        gap: 30px;
+        padding: 0 8%;
+     }
+     .dropdown{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+      }
+      .drop{
+        margin-bottom: 10px ;
+      }
+      .fixtures-box{
+        background-color: transparent;
+
+      }
+      .menu {
+        display: none; /* Menyembunyikan menu secara default */
+    }
+    
+    .menu.show {
+        display: block; /* Menampilkan menu ketika kelas 'show' ditambahkan */
+    }
+    .rotate{
+        transform: rotate(-180deg);
+    }
+    .fa-angle-down{
+        opacity: 1;
+    }
+  }

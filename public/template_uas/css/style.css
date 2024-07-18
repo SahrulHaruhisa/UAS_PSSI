@@ -469,6 +469,7 @@ font-size: 14px;
     
     opacity: 0;
    }
+   
 @media screen and (max-width: 1200px){
     .containers{
         display: grid;

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fixtures.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Ga+Maamli&display=swap" rel="stylesheet"> 
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <section class="next-macth">
+            <figure class="content">
+                <h1>Next Match</h1>
+                <p>Hari</p>
+                <h2>Tanggal</h2>
+                <p>Friendly| <i class="fa-solid fa-location-dot"></i>gelora bung Karno </p>
+            </figure>
+            <figure class="content-team">
+                <div class="img8x">
+                    <img src="img/id-_x70.png" alt="" srcset="">
+                    <p>Indonesia</p>
+                </div>
+                <b>VS</b>
+                <div class="img8x">
+                    <img src="img/id-_x70.png" alt="" srcset="">
+                    <p>Indonesia</p>
+                </div>
+            </figure>
+        </section>
+
+        <section class="fixtures">
+            <nav class="Fixtures-head">
+                <h2>Fixtures</h2>
+                <form action="">
+                    <input type="search" name="" id="" placeholder="Search by name">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+                
+            </nav>
+            <article class="fixtures-wrapper">
+              
+                <figure class="fixtures-box">
+                    <div class="drop">
+                        <div class="dropdown">
+                            <img src="img/indo.png" alt="" srcset="" width="50px">
+                            <p>Friendly</p>
+                            <div class="btns">
+                                <a href="">Tickets news</a>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-angle-down caret" id="toggle-menu"></i>
+                    </div>
+                    <div class="menu" id="menu">
+                        <p>Hari</p>
+                        <h1>18 Juli, 01:00</h1>
+                        <div class="img-macth">
+                            <div class="box">
+                                <img src="img/indo.png" alt="" srcset="">
+                                <p>Indonesia U-23</p>
+                            </div>
+                            <h2>VS</h2>
+                            <div class="box">
+                                <img src="img/indo.png" alt="" srcset="">
+                                <p>Indonesia U-23</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Friendly</p>
+                            <h1><i class="fa-solid fa-location-dot"></i>Gelora Bungkarno Stadium</h1>
+                        </div>
+                        <div class="btns">
+                            <a href="">Tickets news</a>
+                        </div>
+                    </div>
+                </figure>
+
+                <figure class="fixtures-box">
+                    <div class="drop">
+                        <div class="dropdown">
+                            <img src="img/indo.png" alt="" srcset="" width="50px">
+                            <p>Friendly</p>
+                            <div class="btns">
+                                <a href="">Tickets news</a>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-angle-down caret" id="toggle-menu"></i>
+                    </div>
+                    <div class="menu" id="menu">
+                        <p>Hari</p>
+                        <h1>18 Juli, 01:00</h1>
+                        <div class="img-macth">
+                            <div class="box">
+                                <img src="img/indo.png" alt="" srcset="">
+                                <p>Indonesia U-23</p>
+                            </div>
+                            <h2>VS</h2>
+                            <div class="box">
+                                <img src="img/indo.png" alt="" srcset="">
+                                <p>Indonesia U-23</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Friendly</p>
+                            <h1><i class="fa-solid fa-location-dot"></i>Gelora Bungkarno Stadium</h1>
+                        </div>
+                        <div class="btns">
+                            <a href="">Tickets news</a>
+                        </div>
+                    </div>
+                </figure>
+            </article>
+           
+        </section>
+    </div>
+    <script>
+   
+   document.addEventListener('DOMContentLoaded', function () {
+    // Pilih semua elemen fixtures-box
+    const fixturesBoxes = document.querySelectorAll('.fixtures-box');
+
+    fixturesBoxes.forEach(box => {
+        const toggleButton = box.querySelector('.fa-angle-down');
+        const menu = box.querySelector('.menu');
+
+        toggleButton.addEventListener('click', function () {
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show'); // Menyembunyikan menu jika sudah ditampilkan
+                toggleButton.classList.remove('rotate'); // Menghapus rotasi
+            } else {
+                menu.classList.add('show'); // Menampilkan menu jika belum ditampilkan
+                toggleButton.classList.add('rotate'); // Menambahkan rotasi
+            }
+        });
+    });
+})
+    </script>
+</body>
+</html>

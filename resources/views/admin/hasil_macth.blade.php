@@ -14,7 +14,7 @@
                     <p>Let's grow to your business!Create your product and upload here</p>
                   </div>
                   <div class="col-md-6 mb-3">
-                <form action="" method="GET">
+                <form action="/admin/hasil_macth" method="GET">
                  <input type="search" name="search"  class="form-control" id="inputPassword4" placeholder="Search heree bro">
                 </form>
                  </div>

@@ -11,9 +11,15 @@ class PlayerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = player::paginate(2); 
+        if($request->has('search')){
+            $data = player::where('nama_depan','LIKE','%' .$request->search. '%')->paginate(2);
+        }
+        else{
+            $data = player::paginate(2);
+        }
+    
         return view('admin.player',compact('data'));
     }
 

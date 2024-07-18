@@ -11,9 +11,15 @@ class HasilPertandinganController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Hasil_pertandingan::all(); 
+        if($request->has('search')){
+            $data = Hasil_pertandingan::where('type_pertandingan','LIKE','%' .$request->search. '%')->paginate(4);
+        }
+        else{
+            $data = Hasil_pertandingan::paginate(4);
+        }
+       
         return view('admin.hasil_macth',compact('data'));
     }
 

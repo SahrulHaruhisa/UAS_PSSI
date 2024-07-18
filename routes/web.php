@@ -30,8 +30,8 @@ require __DIR__.'/auth.php';
 Route::middleware('auth','userMiddleware')->group(function () {
     Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
     Route::get('dashboard', [Homecontroller::class, 'index'])->name('dashboard');
-
-    
+    Route::get('/semuaberita', [Homecontroller::class, 'berita'])->name('semuaberita');
+    Route::get('/semuapertandingan', [Homecontroller::class, 'pertandingan'])->name('semuapertandingan');
 });
 Route::middleware('auth','adminMiddleware')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');

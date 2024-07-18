@@ -19,4 +19,18 @@ class Homecontroller extends Controller
         return view('dashboard',compact('data','datas','berita','beritas','beritahome','ticket'));
     }
     
+    public function berita(){
+        
+        $berita = berita::all();
+      
+        
+        return view('semuaberita',compact('berita'));
+    }
+    public function pertandingan(){
+        
+        $pertandingan =   Hasil_pertandingan::all();
+        $ticket =   macth_tiket::all();
+        
+        return view('semuapertandingan',compact('pertandingan','ticket'));
+    }
 }

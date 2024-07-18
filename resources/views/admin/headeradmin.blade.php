@@ -7,7 +7,7 @@
                     <i class="fa-solid fa-user"></i>
                     <i class="fas fa-caret-down arrow raul"></i>
                     <ul class="sub-menu rawr">
-                        <li><a href="">Yusa</a></li>
+                        <li><a href="">{{ Auth::user()->name }}</a></li>
                         <li><a href="">
                         <form method="POST" action="{{ route('logout') }}">
                     @csrf

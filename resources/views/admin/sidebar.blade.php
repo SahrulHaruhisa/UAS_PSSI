@@ -1,7 +1,7 @@
 <aside class="sidebar ">
             <div class="logo">
-                <img src="{{asset('template_uas/image/sp-removebg-preview.png')}}" alt="" srcset="">
-                <span>Spurs WEB</span>
+            <img src="{{asset('blogtemplate/img/Cuplikan_layar_2024-06-19_184939-removebg-preview.png')}}" alt="" srcset="">
+                <span>PSSI WEB</span>
             </div>
             <i class="fas fa-bars"></i>
             <ul class="nav-list">
@@ -43,7 +43,7 @@
                     </div>
                     <ul class="sub-menu blank">
                         <li><a href="" class="class-name">Home Controller</a></li>
-                        <li><a href="/admin/tambahslider">Slider Crud </a></li>
+                        <li><a href="/admin/dashboard">Slider Crud </a></li>
                         <li><a href="/admin/player">Player Crud </a></li>
                         <li><a href="/admin/berita"> Berita Crud </a></li>
                         <li><a href="/admin/hasil_macth"> Hasil MacthCrud </a></li>
@@ -105,13 +105,15 @@
                 <li>
                    <div class="profile-details">
                     <div class="profile-content">
-                        <img src="{{asset('template_uas/image/WhatsApp Image 2024-05-14 at 21.00.15.jpeg')}}" alt="">
+                    <img src="{{asset('blogtemplate/img/son.jpg')}}" alt="" srcset="">
                     </div>
                     <div class="name-job">
-                        <p class="name">Yusa Pratama</p>
+                        <p class="name">{{ Auth::user()->name }}</p>
                         <p class="job">Web Developer</p>
                     </div>
-                    <i class="fas fa-right-to-bracket"></i>
+                    <i class="fas fa-right-to-bracket">
+                        
+                    </i>
                    </div>
                 </li>
             </ul>
